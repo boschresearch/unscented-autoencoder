@@ -1,0 +1,32 @@
+model_params:
+  name: 'VanillaVAE'
+  dataset: "fashion_mnist"
+  in_channels: 1
+  latent_dim: 64
+  ut_sampling: False
+  multi_sample: {"num": 1, "method": "random"}
+
+data_params:
+  data_path: ""
+  train_batch_size: 64
+  val_batch_size:  64
+  num_workers: 4
+  replicate_data: 1
+
+exp_params:
+  LR: 0.005
+  weight_decay: 0.0
+  kld_weight: 0.00025
+  frob_norm: False
+  dec_reg: null
+  sigma_recon: False
+  store_posterior: False
+  manual_seed: 1265
+
+trainer_params:
+  gpus: [0]
+  max_epochs: 100
+
+logging_params:
+  save_dir: "logs/"
+  name: "FashionMNIST_VanillaVAE"

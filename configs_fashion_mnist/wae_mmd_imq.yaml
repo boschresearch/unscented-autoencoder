@@ -1,0 +1,27 @@
+model_params:
+  name: 'WAE_MMD'
+  in_channels: 1
+  latent_dim: 64
+  reg_weight: 10
+  kernel_type: 'imq'
+  dataset: "fashion_mnist"
+
+data_params:
+  data_path: ""
+  train_batch_size: 64
+  val_batch_size:  64
+  num_workers: 4
+
+exp_params:
+  LR: 0.005
+  weight_decay: 0.0
+  kld_weight: 0.00025
+  manual_seed: 1265
+
+trainer_params:
+  gpus: [0]
+  max_epochs: 100
+
+logging_params:
+  save_dir: "logs/"
+  name: "FashionMNIST_WassersteinVAE_IMQ"

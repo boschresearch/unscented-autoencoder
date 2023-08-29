@@ -1,0 +1,34 @@
+model_params:
+  name: 'VanillaVAE'
+  dataset: "celeba"
+  in_channels: 3
+  latent_dim: 64
+  corr: "multi"
+  ut_sampling: True
+  multi_sample: {"num": 1, "method": "random"}
+
+data_params:
+  data_path: "datasets/celeba_data"
+  train_batch_size: 64
+  val_batch_size:  64
+  patch_size: 64
+  num_workers: 4
+  replicate_data: 1
+
+exp_params:
+  LR: 0.005
+  weight_decay: 0.0
+  kld_weight: 0.00025
+  frob_norm: True
+  dec_reg: {"reg_type": "eig_grad_norm", "weight": 0.000001}
+  sigma_recon: True
+  store_posterior: False
+  manual_seed: 1265
+
+trainer_params:
+  gpus: [0]
+  max_epochs: 100
+
+logging_params:
+  save_dir: "logs/"
+  name: "CelebA_UAE"

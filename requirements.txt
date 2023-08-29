@@ -1,0 +1,15 @@
+pytorch-lightning
+PyYAML
+sklearn
+tensorboard
+torch
+torchsummary
+torchvision
+
+black
+pre-commit
+
+pytorch-fid
+
+pytest
+ray[tune]
